@@ -7,7 +7,7 @@ function LessonDiv() {
       <div className="row">
         <div className="col-1"></div>
         <div className="col-10 lessons">Lessons
-        <div className="lessons-div">lessons will go here</div>
+        <div className="lessons-div"></div>
         </div>
       </div>
     </div>
