@@ -1,14 +1,22 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
-import Navbar from './components/Navbar'
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Lessons from "./pages/Lessons";
+import Game from "./pages/Play";
+
 
 class App extends Component {
   render() {
     return (
-        <div>
-            <Navbar/>
-        </div>
+      <div>
+        <Navbar />
+        <Game />
+        <Footer />
+      </div>
     );
   }
 }
