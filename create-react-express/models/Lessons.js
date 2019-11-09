@@ -5,9 +5,6 @@ const LessonSchema = new Schema({
     moduleName: {
         type: String,
     },
-    questionNumber: {
-        type: Number
-    },
     question: {
         type: String
     },
@@ -28,6 +25,9 @@ const LessonSchema = new Schema({
     },
     difficulty: {
         type: String
+    },
+    category: {
+        type: String,
     }
 });
 const Lesson = mongoose.Model("Lesson", LessonSchema);

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+var ObjectId = Schema.Types.ObjectId;
 const UserSchema = new Schema({
      username: {
         type: String,
@@ -32,12 +32,16 @@ const UserSchema = new Schema({
     lessons:[
         {
             lessonId:{
-                type:ObjectId,
+                type: ObjectId,
                 ref:"Lesson"
             },
             progress:{
                 type: ObjectId,
                 ref: "Progress"
+            },
+            points: {
+                type : ObjectId,
+                ref: "Points"
             }
         }
     ]
