@@ -12,7 +12,7 @@ module.exports = {
             } else {
                 res.sendStatus(200)
             }
-        })
+        }).catch(err => res.status(422).json(err))
     },
     getAccount: (req,res) => {
         db.User.find({
@@ -27,6 +27,6 @@ module.exports = {
                  res.sendStatus(200)
                  res.json(200)
              }
-        })
+        }).catch(err => res.status(422).json(err))
     }
 }

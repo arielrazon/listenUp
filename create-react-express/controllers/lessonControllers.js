@@ -1,6 +1,7 @@
 const db = require('../models')
 
 module.exports = {
+    // Get everything from the lesson database
     findAll: (req, res) => {
         db.Lesson.find().then((err, data) => {
             if (err) {
@@ -13,6 +14,7 @@ module.exports = {
             }
         }).catch(err => res.status(422).json(err))
     },
+    // Get certain Module from database
     findModule: (req, res) => {
         db.Lesson.find({
             moduleName: req.params.name,
@@ -26,6 +28,7 @@ module.exports = {
             }
         }).catch(err => res.status(422).json(err))
     },
+    // Get certain category info from specific module 
     findCategory: (req, res) => {
         db.Lesson.find({
             moduleName: req.params.name,
@@ -38,7 +41,7 @@ module.exports = {
             } else {
                 res.json(data)
             }
-         })
+         }).catch(err => res.status(422).json(err))
     }
 
 
