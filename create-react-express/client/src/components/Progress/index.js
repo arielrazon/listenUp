@@ -13,7 +13,7 @@ function Progress() {
             <div
               data-preset="fan"
               class="ldBar label-center"
-              data-value="45"
+              data-value="0"
             ></div>
           </div>
         </div>

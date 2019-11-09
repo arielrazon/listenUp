@@ -6,7 +6,12 @@ function Welcome() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-1"></div>
-        <div className="col-10 greeting">Welcome back to the app</div>
+        <div className="col-10 greeting"><h3>CochlearLearn</h3>
+        <div>
+          <img src="../../img/bigOlEar.png" />
+        </div>
+        </div>
+     
       </div>
     </div>
   );
