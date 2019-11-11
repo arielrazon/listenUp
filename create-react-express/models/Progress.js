@@ -6,16 +6,19 @@ const ProgressSchema = new Schema({
         type: Number,
         min: [1],
         max: [3],
+        default: 1
     },
     Module2: {
         type: Number,
         min: [1],
         max: [3],
+        default: 1
     },
     Module3: {
         type: Number,
         min: [1],
         max: [3],
+        default: 1
     }
 });
 const Progress = mongoose.Model("Progress", ProgressSchema);
