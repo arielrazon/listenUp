@@ -3,7 +3,8 @@ const Schema = mongoose.Schema
 
 const PointsSchema = new Schema({
     Points: {
-        type: Number
+        type: Number,
+        default: 0
     }
 });
 const Points = mongoose.Model("Points", PointsSchema);

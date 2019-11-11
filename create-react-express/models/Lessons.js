@@ -11,11 +11,11 @@ const LessonSchema = new Schema({
     image: {
         type: String,
     },
-    voice: {
+    SRC: {
         type: String,
     },
     choices: {
-        type: String
+        type: [String]
     },
     answer: {
         type: String
