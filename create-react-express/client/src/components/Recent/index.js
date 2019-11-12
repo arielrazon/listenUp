@@ -6,7 +6,8 @@ function Recent() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-1"></div>
-        <div className="col-10 recent">Recent activity:<h5>You haven't done anything because this app doesn't exist yet!</h5></div>
+        <div className="col-10 recent"><h5>Recent activity:</h5>You haven't done anything because this app only has one lesson! Sorry!
+        <br/><a href="/play">Start the First Lesson</a></div>
       </div>
     </div>
   );

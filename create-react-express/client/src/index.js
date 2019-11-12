@@ -19,6 +19,7 @@ const routing = (
       <Route exact path="/about" component={About} />
       <Route exact path="/lessons" component={Lessons} />
       <Route exact path="/play" component={Play} />
+      
       <Footer />
     </div>
   </Router>
