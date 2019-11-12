@@ -9,8 +9,9 @@ module.exports = {
                   res.sendStatus(500)
               } else {
                   res.sendStatus(200)
+                  return db.User.findOneandUpdateOne({_id:ObjectId(req.params.id)},{$push:{}})
               }
-        })
+        }).catch(err => res.status(422).json(err))
     },
     updateMod1Three: (req,res) => {
         db.Progress.updateOne({
@@ -20,8 +21,10 @@ module.exports = {
                   res.sendStatus(500)
               } else {
                   res.sendStatus(200)
+
               }
         }).catch(err => res.status(422).json(err))
+       
     },
     updateMod2Two: (req,res)=> {
         db.Progress.updateOne({
