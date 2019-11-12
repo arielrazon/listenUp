@@ -1,6 +1,6 @@
 import React from "react";
 import Game from "../components/Game";
-import GameProgress from "../components/GameProgress";
+import Progress from "../components/Progress";
 
 
 function Play() {
@@ -11,7 +11,7 @@ function Play() {
         </div>
   
         <div className="row">
-          <GameProgress />
+          <Progress />
         </div>
   
       </div>

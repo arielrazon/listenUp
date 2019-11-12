@@ -11,9 +11,9 @@ function Progress() {
           Lesson Progress
           <div className="progress-div">
             <div
-              data-preset="fan"
+              data-preset="energy"
               class="ldBar label-center"
-              data-value="0"
+              data-value="5"
             ></div>
           </div>
         </div>
