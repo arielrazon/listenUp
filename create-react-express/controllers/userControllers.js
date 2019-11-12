@@ -25,7 +25,7 @@ module.exports = {
                  res.sendStatus(404)
              } else {
                  res.sendStatus(200)
-                 res.json(200)
+                 res.json(data)
              }
         }).catch(err => res.status(422).json(err))
     }
