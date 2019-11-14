@@ -18,7 +18,8 @@ module.exports = {
         db.User.find({
            username: req.body.username,
            password: req.body.password,
-        }).then((err,data)=>{
+        }).populate("Lesson","Progress","Points")
+        .then((err,data)=>{
              if (err) {
                  res.sendStatus(500)
              } else if (!data) {
