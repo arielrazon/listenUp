@@ -1,0 +1,27 @@
+.userLogin {
+    background-color: antiquewhite;
+    height: 25em;
+    padding-top: 7em;
+    margin-bottom: 35%;
+    text-align: center;
+    border-radius: 1em;
+  }
+  
+  .loginTitle {
+    height: 50%;
+    padding-top: 3em;
+    margin-top: 3em;
+    text-align: center;
+  }
+  
+  h6 {
+    padding-top: 5em;
+    padding-left: 1em;
+    text-align: left;
+  }
+  
+  .createAccBtn {
+    float: left;
+    margin-left: 1em;
+  }
+  
