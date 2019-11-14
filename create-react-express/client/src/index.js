@@ -10,6 +10,7 @@ import Play from "./pages/Play";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 const routing = (
   <Router>
@@ -19,6 +20,7 @@ const routing = (
       <Route exact path="/about" component={About} />
       <Route exact path="/lessons" component={Lessons} />
       <Route exact path="/play" component={Play} />
+      <Route exact path="/login" component={Login} />
       
       <Footer />
     </div>
