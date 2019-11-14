@@ -17,7 +17,7 @@ module.exports = {
     // Get certain Module from database
     findModule: (req, res) => {
         db.Lesson.find({
-            moduleName: req.params.name,
+            moduleName: req.body.name,
         }).then((err, data) => {
             if (err) {
                 res.sendStatus(500)
@@ -31,8 +31,8 @@ module.exports = {
     // Get certain category info from specific module 
     findCategory: (req, res) => {
         db.Lesson.find({
-            moduleName: req.params.name,
-            category: req.params.category,
+            moduleName: req.body.name,
+            category: req.body.category,
         }).then((err, data) => {
             if (err) {
                 res.sendStatus(500)
