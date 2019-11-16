@@ -28,30 +28,50 @@ class LoginMod extends Component {
         <div className="row">
           <div className="col-1"></div>
           <div className="col-10 loginTitle">
-            Log In
+            <h3>Enter Your Information</h3>
             <div className="userLogin">
               <form>
-                <p>Username: {this.state.username}</p>
-                <p>Password: {this.state.password}</p>
                 <input
                   type="text"
-                  placeholder="Username"
+                  placeholder="   Username"
                   name="username"
                   value={this.state.username}
                   onChange={this.handleInputChange}
+                  className="uNameInput"
                 />
+                <br />
                 <input
                   type="password"
-                  placeholder="Password"
+                  placeholder="   Password"
                   name="password"
                   value={this.state.password}
                   onChange={this.handleInputChange}
+                  className="pWordInput"
                 />
-                <button onClick={this.handleFormSubmit}>Submit</button>
-                <h6>Don't have an account?</h6>
-                <button className="createAccBtn">Create Account</button>
+                <br />
+                <button
+                  type="button"
+                  className="btn btn-success submit"
+                  onClick={this.handleFormSubmit}
+                >
+                  Log In
+                </button>
               </form>
             </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-7"></div>
+          <div className="col-3 signUp">
+            <h6>Don't have an account?</h6>
+
+            <button
+              type="button"
+              className="btn btn-link createAccBtnLogin"
+              onClick={this.handleFormSubmit}
+            >
+              Create Account
+            </button>
           </div>
         </div>
       </div>

@@ -1,32 +1,47 @@
 .userLogin {
   background-color: white;
-  height: 25em;
+  height: 50%;
   padding-top: 7em;
   margin-bottom: 35%;
   text-align: center;
-  border-radius: 1em;
-  border-style: solid;
-  border-color: #c4dcf0;
-  font-family: "Khand", sans-serif;
 }
 
 .loginTitle {
-  height: 50%;
+  height: 25em;
   padding-top: 3em;
   margin-top: 3em;
   text-align: center;
-  font-family: "Khand", sans-serif;
 }
 
-h6 {
+LoginMod h6 {
   padding-top: 5em;
   padding-left: 1em;
   text-align: left;
-  font-family: "Khand", sans-serif;
 }
 
-.createAccBtn {
+.createAccBtnLogin {
   float: left;
-  margin-left: 1em;
+}
+
+.uNameInput,
+.pWordInput,
+.emailInput {
+  margin-bottom: 4em;
+  height: 2em;
+  width: 50%;
+  border: none;
+  border: solid 1px #ccc;
+  border-radius: 10px;
+}
+
+.signUp {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.userLogin,
+.loginTitle,
+.LoginMod h6,
+.createAccBtnLogin {
   font-family: "Khand", sans-serif;
 }

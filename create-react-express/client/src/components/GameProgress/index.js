@@ -7,7 +7,7 @@ function GameProgress() {
       <div className="row">
         <div className="col-1"></div>
         <div className="col-10 gameProg">
-          Progress
+          <h4>Progress</h4>
           <div className="gameProg-div">Game progress will go here</div>
         </div>
       </div>

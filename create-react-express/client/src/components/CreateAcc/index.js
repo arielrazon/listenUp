@@ -30,40 +30,69 @@ class CreateAcc extends Component {
       <div className="container-fluid">
         <div className="row">
           <div className="col-1"></div>
-          <div className="col-10 loginTitle">
-            Create an Account
-            <div className="userLogin">
+          <div className="col-10 createTitle">
+            <h3>Create an Account</h3>
+            <div className="userLoginCreate">
               <form>
-                <p>Username: {this.state.username}</p>
-                <p>Password: {this.state.password}</p>
-                <p>Email: {this.state.email}</p>
                 <input
                   type="text"
-                  placeholder="Username"
+                  placeholder="   Create Username"
                   name="username"
                   value={this.state.username}
                   onChange={this.handleInputChange}
+                  className="uNameInput"
                 />
+                <br />
                 <input
                   type="password"
-                  placeholder="Password"
+                  placeholder="   Create Password"
                   name="password"
                   value={this.state.password}
                   onChange={this.handleInputChange}
+                  className="pWordInput"
                 />
+                <br />
+                <input
+                  type="password"
+                  placeholder="   Confirm Password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+                  className="pWordInput"
+                />
+                <br />
                 <input
                   type="text"
-                  placeholder="Email Address"
+                  placeholder="   Enter Email Address"
                   name="email"
                   value={this.state.email}
                   onChange={this.handInputChange}
+                  className="emailInput"
                 />
-                <button onClick={this.handleFormSubmit}>Submit</button>
-
-                <h6>Already Have an Account?</h6>
-                <button className="createAccBtn">Sign In</button>
+                <br />
+                <button
+                  type="button"
+                  className="btn btn-success submit"
+                  onClick={this.handleFormSubmit}
+                >
+                  Create Account
+                </button>
               </form>
             </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-7"></div>
+          <div className="col-3 accountExists">
+            <h6>Already have an account?</h6>
+
+            <button
+              type="button"
+              className="btn btn-link LoginLink"
+              onClick={this.handleFormSubmit}
+            >
+              Log In
+            </button>
           </div>
         </div>
       </div>

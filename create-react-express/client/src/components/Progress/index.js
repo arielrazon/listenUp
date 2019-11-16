@@ -8,7 +8,7 @@ function Progress() {
       <div className="row">
         <div className="col-1"></div>
         <div className="col-10 prog">
-          Lesson Progress
+          <h3>Lesson Progress</h3>
           <div className="progress-div">
             <div
               data-preset="energy"
