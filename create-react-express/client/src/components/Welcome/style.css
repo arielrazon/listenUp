@@ -1,19 +1,27 @@
 .greeting {
-  background-color: antiquewhite;
+  background-color: white;
   height: 25em;
   padding-top: 1em;
   margin-top: 3em;
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
+  font-family: "Khand", sans-serif;
+  border-style: solid;
+  border-right: none;
+  border-color: #c4dcf0;
 }
 
 .greeting2 {
-  background-color: antiquewhite;
+  background-color: white;
   height: 25em;
   padding-top: 11em;
   margin-top: 3em;
   border-top-right-radius: 1em;
   border-bottom-right-radius: 1em;
+  font-family: "Khand", sans-serif;
+  border-style: solid;
+  border-left: none;
+  border-color: #c4dcf0;
 }
 
 .logo {

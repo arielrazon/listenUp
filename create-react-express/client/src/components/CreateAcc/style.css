@@ -1,10 +1,12 @@
 .userLogin {
-    background-color: antiquewhite;
+    background-color: white;
     height: 25em;
     padding-top: 7em;
     margin-bottom: 35%;
     text-align: center;
     border-radius: 1em;
+    border-style: solid;
+    border-color: #c4dcf0;
   }
   
   .loginTitle {
@@ -23,5 +25,9 @@
   .createAccBtn {
     float: left;
     margin-left: 1em;
+  }
+
+  .userLogin .loginTitle .h6 .createAccBtn {
+    font-family: 'Khand', sans-serif;
   }
   
