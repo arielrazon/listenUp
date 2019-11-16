@@ -11,6 +11,7 @@ module.exports = {
             } else {
                 res.json(data);
                 res.sendStatus(200);
+                console.log(data)
             }
         }).catch(err => res.status(422).json(err))
     },
