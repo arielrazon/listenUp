@@ -30,5 +30,5 @@ const LessonSchema = new Schema({
         type: String,
     }
 });
-const Lesson = mongoose.Model("Lesson", LessonSchema);
+const Lesson = mongoose.model("Lesson", LessonSchema);
 module.exports = Lesson
