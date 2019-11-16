@@ -1,5 +1,6 @@
 .recent {
     background-color: white;
+    font-size: x-large;
     height: 14em;
     padding-top: 1em;
     margin-top: 3em;
@@ -8,4 +9,9 @@
     font-family: 'Khand', sans-serif;
     border-style: solid;
     border-color: #c4dcf0;
+    
+}
+
+.h2 {
+    font-family: 'Khand', sans-serif;
 }
