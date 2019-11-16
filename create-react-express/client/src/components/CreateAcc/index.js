@@ -2,10 +2,11 @@ import "./style.css";
 
 import React, { Component } from "react";
 
-class LoginMod extends Component {
+class CreateAcc extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    email: ""
   };
 
   handleInputChange = event => {
@@ -18,8 +19,10 @@ class LoginMod extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    alert(`Username: ${this.state.username}\nPassword: ${this.state.password}`);
-    this.setState({ username: "", password: "" });
+    alert(
+      `Username: ${this.state.username}\nPassword: ${this.state.password}\nEmail: ${this.state.email}`
+    );
+    this.setState({ username: "", password: "", email: "" });
   };
 
   render() {
@@ -28,11 +31,12 @@ class LoginMod extends Component {
         <div className="row">
           <div className="col-1"></div>
           <div className="col-10 loginTitle">
-            Log In
+            Create an Account
             <div className="userLogin">
               <form>
                 <p>Username: {this.state.username}</p>
                 <p>Password: {this.state.password}</p>
+                <p>Email: {this.state.email}</p>
                 <input
                   type="text"
                   placeholder="Username"
@@ -47,9 +51,17 @@ class LoginMod extends Component {
                   value={this.state.password}
                   onChange={this.handleInputChange}
                 />
+                <input
+                  type="text"
+                  placeholder="Email Address"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handInputChange}
+                />
                 <button onClick={this.handleFormSubmit}>Submit</button>
-                <h6>Don't have an account?</h6>
-                <button className="createAccBtn">Create Account</button>
+
+                <h6>Already Have an Account?</h6>
+                <button className="createAccBtn">Sign In</button>
               </form>
             </div>
           </div>
@@ -59,4 +71,4 @@ class LoginMod extends Component {
   }
 }
 
-export default LoginMod;
+export default CreateAcc;
