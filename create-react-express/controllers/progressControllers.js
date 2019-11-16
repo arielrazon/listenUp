@@ -9,7 +9,7 @@ module.exports = {
                   res.sendStatus(500)
               } else {
                   res.sendStatus(200)
-                  return db.User.findOneandUpdateOne({_id:ObjectId(req.body)},{$push:{Progress: data._id}},{new: true})
+                  return db.User.findOneandUpdateOne({_id:ObjectId(req.body._id)},{$push:{Progress: data._id}},{new: true})
               }
         }).catch(err => res.status(422).json(err))
     },
@@ -21,7 +21,7 @@ module.exports = {
                   res.sendStatus(500);
               } else {
                   res.sendStatus(200);
-                  return db.User.findOneandUpdateOne({_id:ObjectId(req.body)},{$push:{Progress: data._id}},{new: true})
+                  return db.User.findOneandUpdateOne({_id:ObjectId(req.body._id)},{$push:{Progress: data._id}},{new: true})
               }
         }).catch(err => res.status(422).json(err))
        
@@ -34,7 +34,7 @@ module.exports = {
                 res.sendStatus(500)
             } else {
                 res.sendStatus(200)
-                return db.User.findOneandUpdateOne({_id:ObjectId(req.body)},{$push:{Progress: data._id}},{new: true})
+                return db.User.findOneandUpdateOne({_id:ObjectId(req.body._id)},{$push:{Progress: data._id}},{new: true})
             }
         }).catch(err => res.status(422).json(err))
     },
@@ -46,7 +46,7 @@ module.exports = {
                 res.sendStatus(500)
             } else {
                 res.sendStatus(200)
-                return db.User.findOneandUpdateOne({_id:ObjectId(req.body)},{$push:{Progress: data._id}},{new: true});
+                return db.User.findOneandUpdateOne({_id:ObjectId(req.body._id)},{$push:{Progress: data._id}},{new: true});
             }
         }).catch(err => res.status(422).json(err))
     },
@@ -58,7 +58,7 @@ module.exports = {
                 res.sendStatus(500);
             } else {
                 res.sendStatus(200);
-                return db.User.findOneandUpdateOne({_id:ObjectId(req.body)},{$push:{Progress: data._id}},{new: true});
+                return db.User.findOneandUpdateOne({_id:ObjectId(req.body._id)},{$push:{Progress: data._id}},{new: true});
             }
         }).catch(err => res.status(422).json(err))
     },
@@ -70,7 +70,7 @@ module.exports = {
                 res.sendStatus(500)
             } else {
                 res.sendStatus(200)
-                return db.User.findOneandUpdateOne({_id:ObjectId(req.body)},{$push:{Progress: data._id}},{new: true})
+                return db.User.findOneandUpdateOne({_id:ObjectId(req.body._id)},{$push:{Progress: data._id}},{new: true})
             }
         }).catch(err => res.status(422).json(err))
     },
