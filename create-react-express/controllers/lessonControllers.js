@@ -22,7 +22,6 @@ module.exports = {
              if (!data) {
                 res.sendStatus(404)
             } else {
-                res.sendStatus(200)
                 res.json(data)
             }
         },error=>{
