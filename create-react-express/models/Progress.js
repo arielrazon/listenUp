@@ -3,23 +3,18 @@ const Schema = mongoose.Schema
 
 const ProgressSchema = new Schema({
     Module1: {
-        type: Number,
-        min: [1],
-        max: [3],
-        default: 1
+        type: Schema.Types.Decimal128,
     },
     Module2: {
-        type: Number,
-        min: [1],
-        max: [3],
-        default: 1
+        type: Schema.Types.Decimal128   
     },
     Module3: {
-        type: Number,
-        min: [1],
-        max: [3],
-        default: 1
+        type: Schema.Types.Decimal128
+    },
+    Overall: {
+        type: Schema.Types.Decimal128
     }
+
 });
 const Progress = mongoose.model("Progress", ProgressSchema);
 mongoose.set('useCreateIndex', true);

@@ -2,21 +2,22 @@ const db = require("../models");
 
 
 module.exports = {
-  seedPetSitters: function() {
-    const petSitterSeed = [
+ 
+  seedLesson: function () {
+    const LessonSeed = [
       {
-       name: "Lawrence A Porter",
-       profilePhoto: "/images/PetSitter01.jpeg",
-       age: 25,
-       rating: 3,
-       city: "Miami",
-       price: 185,
-       summary: "I love pets. Taking care of dogs are my passion. I would love to show the same care for yours.",
-       phone: "786-248-8464",
-       email: "LawrencePorter@gmail.com",
-       yearsOfExperience: "5",
-       typesOfAnimals: "Dogs, Cats, Iguanas",
-       availability: "Weekends Only"
+        name: "Lawrence A Porter",
+        profilePhoto: "/images/PetSitter01.jpeg",
+        age: 25,
+        rating: 3,
+        city: "Miami",
+        price: 185,
+        summary: "I love pets. Taking care of dogs are my passion. I would love to show the same care for yours.",
+        phone: "786-248-8464",
+        email: "LawrencePorter@gmail.com",
+        yearsOfExperience: "5",
+        typesOfAnimals: "Dogs, Cats, Iguanas",
+        availability: "Weekends Only"
       },
       {
         name: "Ashwini Kapoor",
@@ -31,8 +32,8 @@ module.exports = {
         yearsOfExperience: "7",
         typesOfAnimals: "Dogs, Birds",
         availability: "Weekdays Only"
-       },
-       {
+      },
+      {
         name: "Sarah McCallister",
         profilePhoto: "/images/PetSitter03.jpeg",
         age: 29,
@@ -45,8 +46,8 @@ module.exports = {
         yearsOfExperience: "8",
         typesOfAnimals: "Dogs, Cats, Rabbits",
         availability: "Mondays, Tuesdays"
-       },
-       {
+      },
+      {
         name: "Michael Vazquez",
         profilePhoto: "/images/PetSitter04.jpeg",
         age: 19,
@@ -59,8 +60,8 @@ module.exports = {
         yearsOfExperience: "5",
         typesOfAnimals: "Lizards, Iguanas, Snakes, Frogs",
         availability: "Fridays, Saturdays"
-       },
-       {
+      },
+      {
         name: "Tyron Reeves",
         profilePhoto: "/images/PetSitter05.jpeg",
         age: 35,
@@ -73,8 +74,8 @@ module.exports = {
         yearsOfExperience: "5",
         typesOfAnimals: "Dogs, Cats",
         availability: "Weekends Only"
-       },
-       {
+      },
+      {
         name: "Shane Boyle",
         profilePhoto: "/images/PetSitter06.jpeg",
         age: 26,
@@ -87,8 +88,8 @@ module.exports = {
         yearsOfExperience: "10",
         typesOfAnimals: "Ferrets, Cats",
         availability: "Weekends Only"
-       },
-       {
+      },
+      {
         name: "Wanda J Denny",
         profilePhoto: "/images/PetSitter07.jpeg",
         age: 34,
@@ -101,8 +102,8 @@ module.exports = {
         yearsOfExperience: "4",
         typesOfAnimals: "Dogs, Bunnies, Birds",
         availability: "Weeknights Only"
-       },
-       {
+      },
+      {
         name: "Anthony Rudolph",
         profilePhoto: "/images/PetSitter08.jpeg",
         age: 38,
@@ -115,8 +116,8 @@ module.exports = {
         yearsOfExperience: "5",
         typesOfAnimals: "Dogs, Snakes, Birds",
         availability: "Weekends Only"
-       },
-       {
+      },
+      {
         name: "Leila Zhang",
         profilePhoto: "/images/PetSitter09.jpeg",
         age: 25,
@@ -129,8 +130,8 @@ module.exports = {
         yearsOfExperience: "12",
         typesOfAnimals: "Dogs, Cats, Bunnies, Birds",
         availability: "Weeknights Only"
-       },
-       {
+      },
+      {
         name: "Marissa Stevenson",
         profilePhoto: "/images/PetSitter10.jpeg",
         age: 27,
@@ -143,10 +144,10 @@ module.exports = {
         yearsOfExperience: "7",
         typesOfAnimals: "Dogs, Cats",
         availability: "Monday, Wednesday, Thursday"
-       }
+      }
     ];
-    db.PetSitter.deleteMany({})
-      .then(() => db.PetSitter.collection.insertMany(petSitterSeed))
+    db.Lesson.deleteMany({})
+      .then(() => db.Lesson.collection.insertMany(LessonSeed))
       .then(data => {
         console.log(data.result.n + " records inserted!");
         // process.exit(0); --- Causes node to exit now allowing requests to come in.
@@ -154,6 +155,6 @@ module.exports = {
       .catch(err => {
         console.error(err);
         process.exit(1);
-      });
+      }); 
   }
 }
