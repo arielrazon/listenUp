@@ -31,4 +31,5 @@ const LessonSchema = new Schema({
     }
 });
 const Lesson = mongoose.model("Lesson", LessonSchema,"Lesson");
+mongoose.set('useCreateIndex', true);
 module.exports = Lesson

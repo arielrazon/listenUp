@@ -22,4 +22,5 @@ const ProgressSchema = new Schema({
     }
 });
 const Progress = mongoose.model("Progress", ProgressSchema);
+mongoose.set('useCreateIndex', true);
 module.exports = Progress
