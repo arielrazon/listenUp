@@ -2,8 +2,8 @@ const db = require("../models");
 
 
 module.exports = {
-  seedPetSitters: function() {
-    const petSitterSeed = [
+  seedLesson: function() {
+    const LessonSeed = [
       {
        name: "Lawrence A Porter",
        profilePhoto: "/images/PetSitter01.jpeg",
@@ -145,8 +145,8 @@ module.exports = {
         availability: "Monday, Wednesday, Thursday"
        }
     ];
-    db.PetSitter.deleteMany({})
-      .then(() => db.PetSitter.collection.insertMany(petSitterSeed))
+    db.Lesson.deleteMany({})
+      .then(() => db.Lesson.collection.insertMany(LessonSeed))
       .then(data => {
         console.log(data.result.n + " records inserted!");
         // process.exit(0); --- Causes node to exit now allowing requests to come in.
