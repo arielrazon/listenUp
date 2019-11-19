@@ -9,7 +9,7 @@ module.exports = {
             } else {
                 res.json(data);
             }
-        },error=>{
+        }, error => {
             console.log(error);
             res.sendStatus(500)
         }).catch(err => res.status(422).json(err))
@@ -19,12 +19,12 @@ module.exports = {
         db.Lesson.find({
             moduleName: req.body.name,
         }).then(data => {
-             if (!data) {
+            if (!data) {
                 res.sendStatus(404)
             } else {
                 res.json(data)
             }
-        },error=>{
+        }, error => {
             console.log(error);
             res.sendStatus(500)
         }).catch(err => res.status(422).json(err))
@@ -35,14 +35,14 @@ module.exports = {
             moduleName: req.body.name,
             category: req.body.category,
         }).then(data => {
-             if (!data) {
+            if (!data) {
                 res.sendStatus(404)
             } else {
                 res.json(data)
             }
-         },error =>{
+        }, error => {
             console.log(error);
             res.sendStatus(500)
-         }).catch(err => res.status(422).json(err))
+        }).catch(err => res.status(422).json(err))
     }
 }

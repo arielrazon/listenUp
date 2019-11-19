@@ -8,4 +8,5 @@ const PointsSchema = new Schema({
     }
 });
 const Points = mongoose.model("Points", PointsSchema);
+mongoose.set('useCreateIndex', true);
 module.exports = Points

@@ -25,7 +25,7 @@ router.route("/mod2Three")
 .put(progressController.updateMod2Three);
 router.route("/mod3Two")
 .put(progressController.updateMod3Two);
-router.route("mod3Three").put(progressController.updateMod3Three);
+router.route("/mod3Three").put(progressController.updateMod3Three);
 
 
 module.exports = router
