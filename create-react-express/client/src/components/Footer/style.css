@@ -1,19 +1,6 @@
-.footer {
-    min-height: 100px;
-    background: #E5E5E5;
-    position: sticky;
-    text-align: center;
-    font-family: 'Khand', sans-serif;
-
-  }
-  
-  .footer span {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 3px;
-    background: #B8B8B8;
-    
-  }
-  
+#datFooter {
+    background: #ceccca;
+    color: #ffffff;
+    font-size: 18px;
+    font-style: bold;
+}

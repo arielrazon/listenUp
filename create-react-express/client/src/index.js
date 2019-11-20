@@ -2,21 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 import registerServiceWorker from "./registerServiceWorker";
 import About from "./pages/About";
 import Lessons from "./pages/Lessons";
 import Play from "./pages/Play";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import FooterPage from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Create from "./pages/Create";
+import App from "./App";
 
 const routing = (
   <Router>
     <div>
-      <Navbar />
+      <Nav />
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/lessons" component={Lessons} />
@@ -24,7 +27,7 @@ const routing = (
       <Route exact path="/login" component={Login} />
       <Route exact path="/create" component={Create} />
 
-      <Footer />
+      <FooterPage />
     </div>
   </Router>
 );
