@@ -7,7 +7,7 @@ router.post("/create", (req, res) => {
         password: req.body.password,
         email: req.body.email
     }).then(data => {
-        res.sendStatus(200)
+        res.json(data)
     }, error => {
         console.log(error);
         res.sendStatus(500)
@@ -39,7 +39,7 @@ router.put("/addPoints", (req, res) => {
 
         res.sendStatus(200)
         return db.User.findOneandUpdateOne({
-            _id: ObjectId(_id)
+            _id: _id
         }, { $push: { Points: data._id } })
 
     }, error => {
@@ -88,15 +88,42 @@ router.get("/findCategory", (req, res) => {
         res.sendStatus(500)
     }).catch(err => res.status(422).json(err))
 })
-router.put("/updateMod1", (req,res)=>{
+router.put("/updateMod1", (req, res) => {
     db.Progress.updateOne({
-            
-    },{$set:{Module1: req.body.percentage}}).then(data=>{
-          
-              res.sendStatus(200)
-              return db.User.findOneandUpdateOne({_id:ObjectId(req.body._id)},{$push:{Progress: data._id}},{new: true})
 
-    },error =>{
+    }, { $set: { Module1: req.body.percentage } }).then(data => {
+
+        res.sendStatus(200)
+        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { Progress: data._id } }, { new: true })
+
+    }, error => {
+        console.log(error)
+        res.sendStatus(500)
+    }).catch(err => res.status(422).json(err))
+})
+router.put("/updateMod2", (req, res) => {
+    db.Progress.updateOne({
+
+    }, { $set: { Module2: req.body.percentage } }).then(data => {
+
+        res.sendStatus(200)
+        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { Progress: data._id } }, { new: true })
+
+    }, error => {
+        console.log(error)
+        res.sendStatus(500)
+    }).catch(err => res.status(422).json(err))
+
+})
+router.put("/updateMod3", (req, res) => {
+    db.Progress.updateOne({
+
+    }, { $set: { Module3: 0.10 } }).then(data => {
+
+        res.sendStatus(200)
+        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { Progress: data._id } }, { new: true })
+
+    }, error => {
         console.log(error)
         res.sendStatus(500)
     }).catch(err => res.status(422).json(err))
