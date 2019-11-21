@@ -74,9 +74,9 @@ router.post("/create", (req, res) => {
 
 router.get("/login", (req, res) => {
     db.User.find({
-        _id: "5dd5f72ff5b97d650f5620f1",
-        // username: req.body.username,
-        // password: req.body.password,
+        _id: req.body._id,
+        username: req.body.username,
+        password: req.body.password
     }).populate(
         'progress'
     )
@@ -105,7 +105,7 @@ router.post("/addPoints", (req, res) => {
         res.sendStatus(200)
         return db.User.findOneandUpdateOne({
             _id: _id
-        }, { $push: { Points: data._id } })
+        }, { $push: { points: data._id } })
 
     }, error => {
         console.log(error)
@@ -159,7 +159,7 @@ router.post("/updateMod1", (req, res) => {
     }, { $set: { Module1: req.body.percentage } }).then(data => {
 
         res.sendStatus(200)
-        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { Progress: data._id } }, { new: true })
+        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { progress: data._id } })
 
     }, error => {
         console.log(error)
@@ -172,7 +172,7 @@ router.post("/updateMod2", (req, res) => {
     }, { $set: { Module2: req.body.percentage } }).then(data => {
 
         res.sendStatus(200)
-        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { Progress: data._id } }, { new: true })
+        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { progress: data._id } })
 
     }, error => {
         console.log(error)
@@ -186,7 +186,7 @@ router.post("/updateMod3", (req, res) => {
     }, { $set: { Module3: 0.10 } }).then(data => {
 
         res.sendStatus(200)
-        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { lessons: { progress: data._id } } }, { new: true })
+        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { progress: data._id }  })
 
     }, error => {
         console.log(error)
