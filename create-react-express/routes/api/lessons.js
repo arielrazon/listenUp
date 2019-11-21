@@ -1,23 +1,88 @@
 const router = require("express").Router();
 const db = require("../../models");
-
 router.post("/create", (req, res) => {
+    let userId;
+
+    let result;
+
     db.User.create({
-        username: req.body.username,
-        password: req.body.password,
-        email: req.body.email
-    }).then(data => {
-        res.json(data)
+        username: `test${Date.now()}`,
+        password: "handyman",
+        email: `test${Date.now()}@email.com`,
+
+    }).then((data) => {
+
+        userId = data._id;
+
+        console.log('userId in user create:', userId)
+
+        result=data;
+
+
+
+        db.Progress.create({
+
+        }).then(progress => {
+
+            console.log('userId progress create:', userId)
+
+            db.User.findOneAndUpdate({ _id: userId }, { 
+                $push: 
+                    { progress: progress._id } 
+                
+            },{ new: true }).then(data => {
+                console.log(" User updated...", data), 
+                error => console.log(error)
+            });
+
+        })
+
+
+
+        db.Points.create({
+
+        }).then(points => {
+
+            console.log('userId points create:', userId)
+
+            db.User.findOneAndUpdate({ _id: userId }, { 
+                $push: { 
+                    points: points._id 
+                } 
+            },{ new: true }).then(data => {
+                console.log(" User updated...", data), 
+                error => console.log(error)
+            });
+
+        })
+
+
+
+
+
+
+
+    },{ new: true }).then(data => {
+        res.json(result._id)
     }, error => {
         console.log(error);
         res.sendStatus(500)
     }).catch(err => res.status(422).json(err))
 })
+
+
+
 router.get("/login", (req, res) => {
     db.User.find({
-        username: req.body.username,
-        password: req.body.password,
-    }).populate("Lesson", "Progress", "Points")
+        _id: "5dd5f72ff5b97d650f5620f1",
+        // username: req.body.username,
+        // password: req.body.password,
+    }).populate(
+        'progress'
+    )
+    .populate(
+        'points'
+    )
         .then(data => {
 
             if (!data) {
@@ -30,7 +95,7 @@ router.get("/login", (req, res) => {
             res.sendStatus(500)
         }).catch(err => res.status(422).json(err))
 })
-router.put("/addPoints", (req, res) => {
+router.post("/addPoints", (req, res) => {
     const _id = req.body._id
     const points = req.body.points
     db.Points.updateOne({
@@ -88,7 +153,7 @@ router.get("/findCategory", (req, res) => {
         res.sendStatus(500)
     }).catch(err => res.status(422).json(err))
 })
-router.put("/updateMod1", (req, res) => {
+router.post("/updateMod1", (req, res) => {
     db.Progress.updateOne({
 
     }, { $set: { Module1: req.body.percentage } }).then(data => {
@@ -101,7 +166,7 @@ router.put("/updateMod1", (req, res) => {
         res.sendStatus(500)
     }).catch(err => res.status(422).json(err))
 })
-router.put("/updateMod2", (req, res) => {
+router.post("/updateMod2", (req, res) => {
     db.Progress.updateOne({
 
     }, { $set: { Module2: req.body.percentage } }).then(data => {
@@ -115,13 +180,13 @@ router.put("/updateMod2", (req, res) => {
     }).catch(err => res.status(422).json(err))
 
 })
-router.put("/updateMod3", (req, res) => {
+router.post("/updateMod3", (req, res) => {
     db.Progress.updateOne({
 
     }, { $set: { Module3: 0.10 } }).then(data => {
 
         res.sendStatus(200)
-        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { Progress: data._id } }, { new: true })
+        return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { lessons: { progress: data._id } } }, { new: true })
 
     }, error => {
         console.log(error)
