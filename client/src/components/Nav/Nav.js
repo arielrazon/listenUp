@@ -23,7 +23,17 @@ class Nav extends React.Component {
       <Navbar color="blue lighten-3" dark expand="md" scrolling>
         {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
         <Collapse isOpen={this.state.collapse} navbar>
+          
           <NavbarNav left>
+          {/* <NavItem className="nav-item">
+          <Link to="/"  className={
+                  window.location.pathname === "/create"
+                    ? "nav-link active"
+                    : "nav-link"
+                }> */}
+            <h1 style={{color:"#fff"}}>ListenUp!</h1>
+            {/* </Link>
+            </NavItem> */}
             <NavItem className="nav-item">
               <Link
                 to="/"
@@ -49,6 +59,8 @@ class Nav extends React.Component {
               </Link>
             </NavItem>
           </NavbarNav>
+    
+            
           <NavbarNav right>
             <NavItem className="nav-item" active>
               <Link
@@ -74,6 +86,7 @@ class Nav extends React.Component {
                 Sign-up
               </Link>
             </NavItem>
+       
           </NavbarNav>
         </Collapse>
       </Navbar>
