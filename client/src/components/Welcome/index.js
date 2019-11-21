@@ -14,8 +14,8 @@ function Welcome() {
           </div>
         </div>
         <div className="col-7 greeting2">
-          <h3>ListenUp</h3>
-          <h4 className="welcomeBack">Welcome Back. Nice to see you again.</h4>
+          <h1>ListenUp!</h1>
+          <h4 className="welcomeBack">Welcome Back Ariel. Nice to see you again.</h4>
         </div>
       </div>
     </div>

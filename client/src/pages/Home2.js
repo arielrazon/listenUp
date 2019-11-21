@@ -1,7 +1,7 @@
 import React from "react";
 import Welcome from "../components/Welcome";
-import Recent from "../components/Recent";
-import Progress from "../components/Progress";
+import Recent2 from "../components/Recent2";
+import Progress2 from "../components/Progress2";
 
 function Home() {
   return (
@@ -11,11 +11,11 @@ function Home() {
       </div>
 
       <div className="row">
-        <Recent />
+        <Recent2 />
       </div>
 
       <div className="row">
-        <Progress value="0"/>
+        <Progress2 />
       </div>
     </div>
   );

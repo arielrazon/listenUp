@@ -2,8 +2,8 @@ import React from "react";
 import "./style.css";
 import { ldBar } from "@loadingio/loading-bar";
 
-export default props =>
- 
+function Progress2() {
+  return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-1"></div>
@@ -12,12 +12,14 @@ export default props =>
           <div className="progress-div">
             <div
               data-preset="stripe"
-              className="ldBar label-center"
-              data-value={props.value}
+              class="ldBar label-center"
+              data-value="10"
             ></div>
           </div>
         </div>
       </div>
     </div>
- 
+  );
+}
 
+export default Progress2;

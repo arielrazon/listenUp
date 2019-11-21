@@ -2,11 +2,11 @@ import React from "react";
 import Game from "../components/Game";
 import Progress from "../components/Progress";
 
-function Play() {
+function Play21() {
     return( 
         <div className="container-fluid">
         <div className="row">
-          <Game next="/play2" round="1.1" choice1="ahhh" choice1written="ahhh" choice2="oooo" choice2written="oooo" choice3="eeee" choice3written="eeee" choice4="ayyy" choice4written="ayyy" speak="ayy" />
+          <Game next="/play2" round="2.1" choice1="X" choice1written="letter X" choice2="K" choice2written="letter K" choice3="B" choice3written="Letter B" choice4="D" choice4written="letter D" speak="Kay"  />
 
         </div>
   
@@ -18,4 +18,4 @@ function Play() {
     )
 }
 
-export default Play;
+export default Play21;

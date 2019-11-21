@@ -16,6 +16,10 @@ class LoginMod extends Component {
     });
   };
 
+  handlePageChange() {
+    window.location = "/";
+  }
+
   handleFormSubmit = event => {
     event.preventDefault();
     alert(`Username: ${this.state.username}\nPassword: ${this.state.password}`);
@@ -52,7 +56,7 @@ class LoginMod extends Component {
                 <button
                   type="button"
                   className="btn btn-success submit"
-                  onClick={this.handleFormSubmit}
+                  onClick={this.handlePageChange}
                 >
                   Log In
                 </button>
@@ -60,7 +64,7 @@ class LoginMod extends Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-7"></div>
           <div className="col-3 signUp">
             <h6>Don't have an account?</h6>
@@ -73,7 +77,7 @@ class LoginMod extends Component {
               Create Account
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
