@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import ayy from "../../audio/ayyy.mp3";
+import SpeakButton from "../SpeakButton"
 
 function Game() {
   return (
@@ -10,12 +10,10 @@ function Game() {
         <div className="col-10 Game">
           Game
           <div className="Game-div">
-
+      
           <h6>Single-Letter Sounds 1/15</h6>
-          <audio controls>
-        <source src={ayy} type="audio/mpeg" />
-        Your browser does not support the audio element.
-        </audio>
+
+       <SpeakButton speech="some shit"/>
         <form>
         <input type="radio" name="ayyy" value="y" id="y" /><label for="y"> yyy</label><br/>
         <input type="radio" name="ayyy" value="ehh" id="ehh" /><label for="ehh"> ehh</label><br/>
