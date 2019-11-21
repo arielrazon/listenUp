@@ -16,7 +16,6 @@ const UserSchema = new Schema({
         type: String,
         min:[15,"Not Enough"],
         max:[20],
-        unique: true,
         required: true
      },
      email: {
@@ -31,22 +30,23 @@ const UserSchema = new Schema({
         type: Date, default: Date.now
     },
     // Referencing other documents
-    lessons:[
+    
+    progress:[
         {
-            lessonId:{
-                type: Schema.Types.ObjectId,
-                ref:"Lesson"
-            },
-            progress:{
-                type: Schema.Types.ObjectId,
-                ref: "Progress"
-            },
-            points: {
-                type : Schema.Types.ObjectId,
-                ref: "Points"
-            }
+        type: Schema.Types.ObjectId,
+        ref: "Progress",
         }
+        
+    ],
+    points: [
+        {
+        type : Schema.Types.ObjectId,
+        ref: "Points",
+        }
+        
     ]
+
+    
     //Make sure to finish
 });
 // Pre save hook to hash passwords
