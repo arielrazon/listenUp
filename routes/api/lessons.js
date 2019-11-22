@@ -183,7 +183,7 @@ router.post("/updateMod2", (req, res) => {
 router.post("/updateMod3", (req, res) => {
     db.Progress.updateOne({
 
-    }, { $set: { Module3: 0.10 } }).then(data => {
+    }, { $set: { Module3: req.body.percentage } }).then(data => {
 
         res.sendStatus(200)
         return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { progress: data._id }  })
