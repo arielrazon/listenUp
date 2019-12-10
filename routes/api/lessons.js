@@ -6,15 +6,14 @@ router.post("/create", (req, res) => {
     let result;
 
     db.User.create({
-        username: `test${Date.now()}`,
-        password: "handyman",
-        email: `test${Date.now()}@email.com`,
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email,
 
     }).then((data) => {
 
         userId = data._id;
 
-        console.log('userId in user create:', userId)
 
         result=data;
 
@@ -24,14 +23,12 @@ router.post("/create", (req, res) => {
 
         }).then(progress => {
 
-            console.log('userId progress create:', userId)
-
             db.User.findOneAndUpdate({ _id: userId }, { 
                 $push: 
                     { progress: progress._id } 
                 
             },{ new: true }).then(data => {
-                console.log(" User updated...", data), 
+                
                 error => console.log(error)
             });
 
@@ -43,14 +40,14 @@ router.post("/create", (req, res) => {
 
         }).then(points => {
 
-            console.log('userId points create:', userId)
+           
 
             db.User.findOneAndUpdate({ _id: userId }, { 
                 $push: { 
                     points: points._id 
                 } 
             },{ new: true }).then(data => {
-                console.log(" User updated...", data), 
+               
                 error => console.log(error)
             });
 
@@ -183,7 +180,7 @@ router.post("/updateMod2", (req, res) => {
 router.post("/updateMod3", (req, res) => {
     db.Progress.updateOne({
 
-    }, { $set: { Module3: 0.10 } }).then(data => {
+    }, { $set: { Module3: req.body.percentage } }).then(data => {
 
         res.sendStatus(200)
         return db.User.findOneandUpdateOne({ _id: req.body._id }, { $push: { progress: data._id }  })
